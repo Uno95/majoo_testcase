@@ -1,0 +1,32 @@
+version: '3.8'
+services:
+  main:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    command: 'php artisan serve --host=0.0.0.0'
+    volumes:
+      - .:/app
+    ports:
+      - 8001:8000
+    depends_on:
+      - product_app_db
+
+  # main_queue:
+  #   build:
+  #     context: .
+  #     dockerfile: Dockerfile
+  #   command: 'php artisan queue:work'
+  #   depends_on:
+  #     - product_app_db
+
+  product_app_db:
+    image: mysql:latest
+    environment:
+      MYSQL_DATABASE: majoo_product_db
+      MYSQL_PASSWORD: 12345678
+      MYSQL_ROOT_PASSWORD: 12345678
+    volumes:
+      - ./storage/dbdata:/var/lib/mysql
+    ports:
+      - 33064:3306
