@@ -1,0 +1,23 @@
+.product-item {
+    background-color: #fff;
+    border: 1px solid #999;
+    border-radius: 5px;
+}
+
+.product-item img {
+    width: 100%;
+}
+
+#description {
+    text-align: left;
+}
+
+#editor {
+    background-color: #fff;
+    height: 280px;
+    margin-bottom: 25px;
+}
+
+.ql-toolbar {
+    width: 100%;
+}

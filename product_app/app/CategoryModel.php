@@ -10,6 +10,7 @@ class CategoryModel extends Model
 {
     use HasUuidTrait;
 
+    protected $table = 'categories';
     protected $primaryKey = 'uuid';
 
     protected $fillable = [
